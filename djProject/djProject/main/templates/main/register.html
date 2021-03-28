@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block body %}
+<div style="margin: 100px">
+    <form method="POST", action="{% url 'register' %}">
+        {% csrf_token %}
+        {{form | crispy}}
+        <input name="register" type="submit" value="Registration" class="btn btn-outline-success">
+    </form>
+    <hr>
+    <small>Already have an account? <a href="{% url 'login' %}">Login</a></small><br>
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+{% endblock %}

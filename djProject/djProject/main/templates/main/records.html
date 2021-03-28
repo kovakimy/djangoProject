@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Records
+{% endblock %}
+
+{% block body %}
+<br><br><br><br>
+<div class="alert alert-success">
+    <div><h3>Nails</h3></div>
+{% for rec in records_nails %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{rec.time}} | {{rec.master}} | {{rec.client}}</h3><a href="{% url 'delete_record_nails' rec.id %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endfor %}
+    {% if not master %}
+    <a class="btn btn-outline-success", href="{%url 'create_record_nails'%}">Create record</a>
+    {% endif %}
+</div>
+<div class="alert alert-success">
+    <div><h3>Eyebrows</h3></div>
+{% for rec in records_eyebrows %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{rec.time}} | {{rec.master}} | {{rec.client}}</h3><a href="{% url 'delete_record_eyebrows' rec.id %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endfor %}
+    {% if not master %}
+    <a class="btn btn-outline-success", href="{%url 'create_record_eyebrows'%}">Create record</a>
+    {% endif %}
+</div>
+<div class="alert alert-success">
+    <div><h3>Eyelashes</h3></div>
+{% for rec in records_eyelashes %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{rec.time}} | {{rec.master}} | {{rec.client}}</h3><a href="{% url 'delete_record_eyelashes' rec.id %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endfor %}
+    {% if not master %}
+    <a class="btn btn-outline-success", href="{%url 'create_record_eyelashes'%}">Create record</a>
+    {% endif %}
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+{% endblock %}

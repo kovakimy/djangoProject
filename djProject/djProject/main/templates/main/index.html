@@ -1,0 +1,151 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://bootstraptema.ru/stuff/0-0-0-357-20">
+<script type="text/javascript" src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<div class="container"><div class="row">
+
+<div class="col-md-12">
+<div id="myCarousel" class="carousel slide carousel-slideFullIn" data-ride="carousel">
+ <ol class="carousel-indicators">
+ <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+ <li data-target="#myCarousel" data-slide-to="1"></li>
+ <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ol>
+ <div class="carousel-inner">
+ <div class="item active">
+ <img src="https://sun9-2.userapi.com/impg/egGAJpe5-2vU7TEGE5vZ9wVUcb8NLio2goW5Zg/qBvYDSLqCys.jpg?size=1920x1200&quality=96&sign=bc398e6dea594c4493706f8fcf08d53d&type=album" alt="">
+ <div class="container">
+ <div class="carousel-caption">
+<h1><span class="glyphicon glyphicon-star-empty"></span> Barber Shop DK <span class="glyphicon glyphicon-star-empty"></span></h1>
+
+ <p><a class="btn btn-lg btn-opacity" href="{% url 'record' %}" role="button">Record</a></p>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <img src="https://sun9-73.userapi.com/impg/xsKNaXi1EuRo8KKcuVG4f7AVYu520vM3L6lHZg/GSS_P5n-toE.jpg?size=990x500&quality=96&sign=3377327b7e946f36d2dd535a4aa50601&type=album" alt="">
+ <div class="container">
+ <div class="carousel-caption">
+<h1><span class="glyphicon glyphicon-star-empty"></span> Barber Shop DK <span class="glyphicon glyphicon-star-empty"></span></h1>
+
+ <p><a class="btn btn-lg btn-opacity" href="{% url 'record' %}" role="button">Record</a></p>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+<img src="https://sun9-13.userapi.com/impg/fNs-j-68lXgGJ0niBMp8nxu4oYdwYxHnaPl9uA/SNiM0yQ88yA.jpg?size=900x601&quality=96&sign=faa92470043c84436f66e50b898d7b01&type=album" alt="">
+ <div class="container">
+ <div class="carousel-caption">
+<h1><span class="glyphicon glyphicon-star-empty"></span> Barber Shop DK <span class="glyphicon glyphicon-star-empty"></span></h1>
+
+ <p><a class="btn btn-lg btn-opacity" href="{% url 'record' %}" role="button">Record</a></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+ <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+ </div>
+</div>
+
+</div></div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+  <br><br>
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+       <style>
+       .round {
+        border-radius: 100px; /* Радиус скругления */
+       }
+      </style>
+      <div class="col-lg-4">
+
+
+        <img src="https://sun9-10.userapi.com/impg/rcZmEiw7p2AQtvdOfSw0QYbKRG77Y7NjIvkrkQ/awvIqDQ6dWw.jpg?size=1030x1030&quality=96&sign=1dc87a3ecbd25c0a64e68d80c70d388e&type=album" width="140" height="140" class="round" >
+
+        <h2>Manicure</h2>
+        <p>"Many women's problems, before which the best psychiatrists succumb, are often solved by a manicurist of the second category." - Mary McCarthy</p>
+        <p><a class="btn btn-secondary" href="{% url 'record' %}">Sign up for the procedure »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+      </style>
+        <img src="https://sun9-54.userapi.com/impg/Gvnk3FidgLd25B2vvSSJ6XuZ6YoTMXPWvJ1-rg/hTd9znFDFDI.jpg?size=1080x1080&quality=96&sign=b4716618504b9e5379d2a1a8d3051631&type=album" width="140" height="140" class="round" >
+        <h2>Eyebrows</h2>
+        <p>The shape of the eyebrows plays a very important role, so you need to choose the right one for you. Today preference is given to their natural look.</p>
+        <p><a class="btn btn-secondary" href="{% url 'record' %}">Sign up for the procedure »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://sun9-15.userapi.com/impg/M1BkSx2XwiOZaqqrXzrY8sxcmHFSjMWJ_9gQxQ/fsG6bHGLyUw.jpg?size=800x794&quality=96&sign=7f47010dd7da940badb5a592f756ac81&type=album" width="140" height="140" class="round" >
+        <h2>Eyelashes</h2>
+        <p>A lot has been said about eyelashes, because every girl wants to have them as long and magnificent as possible in order to amaze men with the beauty of their eyes.</p>
+        <p><a class="btn btn-secondary" href="{% url 'record' %}">Sign up for the procedure »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Beauty is not a quality of things themselves: it exists only in the mind that contemplates them; and every mind perceives its beauty</h2>
+      </div>
+      <div class="col-md-5">
+
+        <img src="https://psv4.userapi.com/c536436/u503460261/docs/d27/9b18cf41e432/kachannye-zhenschiny-vo-os-ukazyvaya-39383079.jpg?extra=7Nzs_WApJlfthrOYcS0WOizz--6bWpT4nXSejK2bY1N3gLNAEXDStqdLlhvYjyjdiT-UhrC3U8ziE0X4WYo5ys57T8hV61kVQE_gn_uTO79mnUACLDun3H3_DzGwyX7TJSsXp3Kw5Em2lkhm70EPp55Img" width="500" height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><span class="text-muted">The beauty of a woman is not in the fashion of her face, but the true beauty of a woman is reflected in her soul. It is a care that she lovingly conveys the passion she shows. The beauty of a woman grows over the years.</span></h2>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://psv4.userapi.com/c532036/u503460261/docs/d27/b8051cca5104/unnamed.jpg?extra=Ng2cJdgltHv8sBgG6XqgQVo7UNZVV57eCl0Bgvyp9JKJHqW9LEBDFoLiPohsYscAwpLtmiiSYIMOEovb4FSBzEjGvVDgT69FLvzcO8mhVLYZ-8wUnSGPdAAZNAvMT89Qs0_7tqTSMG0ZE6Os6DVJZKaABQ" width="470" height="470">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Fashion is not something that exists in dresses only. Fashion is in the sky, in the street, fashion has to do with ideas, the way we live, what is happening.</h2>
+      </div>
+      <div class="col-md-5">
+        <img src="https://sun9-72.userapi.com/impg/Icy4sTppjopyJvCXL0AFGgrtqjCW7U_xKzLd9w/JqI8ab5Up18.jpg?size=900x900&quality=96&sign=79759e427cbfaf073473bebb75a05cd3&type=album" width="480" height="480">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </footer>
+
+{% endblock %}

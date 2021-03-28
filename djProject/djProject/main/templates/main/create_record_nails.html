@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Create record nails
+{% endblock %}
+
+{% block body %}
+<br><br><br>
+{% if user.is_authenticated %}
+<form method="POST", action="{% url 'create_record_nails' %}">
+    {% csrf_token %}
+    <style>
+   .layer {
+    margin-left: 5%;
+    margin-right: 5%;
+   }
+   .fig {
+    text-align: center; /* Выравнивание по центру */
+     box-shadow: 0 0 8px 8px white inset;
+   }
+  </style>
+    <div class="layer">
+    <h2>Choose time   </h2>{{form | crispy}}<br>
+    <input name="create_record_nails" type="submit" value="Create" class="btn btn-outline-success"><br>
+    <span>{{error}}</span>
+        <div class="fig"><img src="https://sun9-6.userapi.com/impg/6-5H6_IlMg_wS5XdfY5Egpy8zjAnh1pfHoV_BA/DnsLdinXrUg.jpg?size=838x512&quality=96&sign=48e3f30685ee31a8571f81658578c91d&type=album"></div>
+    </div>
+</form>
+{% else %}
+    <span>"You are not signed in!"</span><br>
+    <a href="{% url 'login' %}" class="btn btn-outline-success">Sign in</a><br>
+{% endif %}
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+{% endblock %}

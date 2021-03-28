@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Delete record eyelashes
+{% endblock %}
+
+{% block body %}
+<br><br><br>
+{% if user.is_authenticated %}
+<form method="POST">
+       <style>
+   .layer {
+    margin-left: 5%;
+    margin-right: 5%;
+   }
+  </style>
+    {% csrf_token %}
+    <div class="layer">
+        <h2>Do you really want to cancel the record?</h2>
+    <input name="delete_record_eyelashes" type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+{% else %}
+    <span>"You are not signed in!"</span><br>
+    <a href="{% url 'login' %}" class="btn btn-outline-success">Sign in</a><br>
+{% endif %}
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+{% endblock %}
