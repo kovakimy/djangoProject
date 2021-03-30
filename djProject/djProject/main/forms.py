@@ -1,11 +1,12 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from .models import Records, RecordsEyebrows, RecordsEyelashes
+from .models import Records, RecordsEyebrows, RecordsEyelashes, Feedback
 from django.contrib.auth.models import User
 import datetime
 from django.db import models
 from .models import Records
 from django.forms import ModelForm
+
 
 TIME_CHOISES = [datetime.time(8,0), datetime.time(8,30), datetime.time(9,0), datetime.time(9,30), datetime.time(10,0),
                 datetime.time(10,30), datetime.time(11,0), datetime.time(11,30), datetime.time(12,0), datetime.time(12,30),
@@ -59,3 +60,13 @@ class MakeRecordEyelashesForm(ModelForm):
     class Meta:
         model = RecordsEyelashes
         fields = ['time', 'master', 'client']
+
+
+class FeedbackForm(ModelForm):
+    client = forms.CharField(required=False, widget=forms.HiddenInput())
+    master = forms.ChoiceField(required=True, choices=[(master, master) for master in get_masters()])
+    feedback = forms.CharField(widget=forms.Textarea, help_text="Write your comments")
+
+    class Meta:
+        model = Feedback
+        fields = ['client', 'master', 'feedback']

@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .forms import UserRegisterForm, MakeRecordForm, MakeRecordEyebrowsForm, MakeRecordEyelashesForm
+from .forms import UserRegisterForm, MakeRecordForm, MakeRecordEyebrowsForm, MakeRecordEyelashesForm, FeedbackForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout
 from django.contrib.auth.models import Group
-from .models import Records, RecordsEyelashes, RecordsEyebrows
+from .models import Records, RecordsEyelashes, RecordsEyebrows, Feedback
 from django.views.generic import DeleteView
 
 
@@ -206,3 +206,38 @@ class DeleteRecordEyelashes(DeleteView):
     model = RecordsEyelashes
     template_name = 'main/delete_record_eyelashes.html'
     success_url = '/record'
+
+
+def CreateFeedback(request):
+    form = None
+    error = ''
+    if (len(request.user.groups.all()) > 0) and (request.user.groups.all()[0].name == 'master'):
+        return redirect('feedbacks')
+
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+
+        if form.is_valid():
+            ins = form.save()
+            ins.client = request.user.username
+            ins.save()
+            form.save()
+            return redirect('feedbacks')
+    else:
+        form = FeedbackForm()
+    context = {'form': form, 'error': error}
+    return render(request, 'main/feedback.html', context)
+
+
+def Feedbacks(request):
+    form = None
+    error = ''
+    context = {}
+    if (len(request.user.groups.all()) > 0) and (request.user.groups.all()[0].name == 'master'):
+        context['master'] = True
+    elif (len(request.user.groups.all()) > 0) and (request.user.groups.all()[0].name == 'client'):
+        context['master'] = False
+    feedbacks = Feedback.objects.all().order_by("-id")
+    context['feedbacks'] = feedbacks
+    return render(request, 'main/feedbacks.html', context)
+

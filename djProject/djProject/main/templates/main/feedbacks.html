@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Records
+{% endblock %}
+
+{% block body %}
+    <style>
+   .layer {
+    margin-left: 5%;
+    margin-right: 5%;
+   }
+   </style>
+<br><br><br><br>
+<div class="layer">
+    <div><h3>Feedbacks</h3></div>
+    {% if not master %}
+    <a class="btn btn-outline-success", href="{%url 'create_feedback'%}">Create feedback</a>
+    {% endif %}
+{% for feedb in feedbacks %}
+    <div class="alert alert-warning mt-2">
+    <div class="alert alert-success">
+        <h3 style = "text-decoration:underline;">Client name : </h3><h3>{{feedb.client}}</h3>
+        <h3 style = "text-decoration:underline;">Master name : </h3><h3>{{feedb.master}}</h3>
+        <h3 style = "text-decoration:underline;">Feedback : </h3><h3>{{feedb.feedback}}</h3>
+    </div>
+        </div>
+{% endfor %}
+
+</div>
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+{% endblock %}

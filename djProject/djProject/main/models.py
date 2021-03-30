@@ -38,3 +38,9 @@ class RecordsEyelashes(models.Model):
     class Meta:
         verbose_name = 'RecordEyelashes'
         verbose_name_plural = 'RecordsEyelashes'
+
+
+class Feedback(models.Model):
+    client = models.CharField('Client', max_length=20)
+    master = models.CharField('Master', max_length=20)
+    feedback = models.TextField('Feedback')

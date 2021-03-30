@@ -15,4 +15,6 @@ urlpatterns = [
     path('<int:pk>/delete_eyebrows', views.DeleteRecordEyebrows.as_view(), name='delete_record_eyebrows'),
     path('create_record_eyelashes', views.create_record_eyelashes, name='create_record_eyelashes'),
     path('<int:pk>/delete_eyelashes', views.DeleteRecordEyelashes.as_view(), name='delete_record_eyelashes'),
+    path('create_feedback', views.CreateFeedback, name='create_feedback'),
+    path('feedbacks', views.Feedbacks, name='feedbacks'),
 ]

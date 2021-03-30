@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block body %}
+<br>
+    <style>
+   .layer {
+    margin-left: 5%;
+    margin-right: 5%;
+   }
+   </style>
+{% if user.is_authenticated %}
+<div class="layer">
+<form method="POST", action="{% url 'create_feedback' %}">
+    {% csrf_token %}
+    {% if not master%}
+
+    <h3> Create feedback</h3>{{form | crispy}}<br>
+    <input name="create_feedback" type="submit" value="Create" class="btn btn-outline-success"><br>
+    <span>{{error}}</span>
+    {% endif %}
+</form>
+{% else %}
+    <span>"You are not signed in!"</span><br>
+    <a href="{% url 'login' %}" class="btn btn-outline-success">Sign in</a><br>
+{% endif %}
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <p> +9 (999) - 999 - 99 - 99 </p>
+      <p>© 2021 Barber Shop, Inc. · <a href="#">Privacy</a></p>
+  </div>
+</nav>
+
+{% endblock %}
